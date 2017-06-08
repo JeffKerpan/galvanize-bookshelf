@@ -1,8 +1,14 @@
 'use strict';
 
 module.exports = {
+
+production: {
+  client: 'pg',
+  connection: process.env.DATABASE_URL
+},
+
   development: {
-    clieng: 'pg',
+    client: 'pg',
     connection: 'postgres://localhost/bookshelf_dev'
   },
 

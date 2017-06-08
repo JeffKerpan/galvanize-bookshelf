@@ -25,13 +25,18 @@ router.get('/favorites', (req, res, next) => {
 });
 
 router.get('/favorites/check?', (req, res, next) => {
-  knex('favorites').select('book_id').where('id', parseInt(req.query.bookId)).then(result => {
+  knex('favorites')
+    .select('book_id')
+    .where('id', parseInt(req.query.bookId))
+
+    .then(result => {
     if (result.length > 0) {
       res.send(true);
     } else {
       res.send(false);
     }
   });
+
 });
 
 router.post('/favorites', (req, res, next) => {

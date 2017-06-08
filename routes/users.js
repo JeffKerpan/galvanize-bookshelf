@@ -22,7 +22,6 @@ router.post('/users', (req, res, next) => {
   });
 });
 
-
 // YOUR CODE HERE
 
 module.exports = router;
