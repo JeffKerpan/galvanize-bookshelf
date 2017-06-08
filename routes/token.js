@@ -12,7 +12,7 @@ const jwt = require('jsonwebtoken');
 
 router.get('/token', (req, res, next) => {
   var token = req.cookies.token;
-  jwt.verify(token, 'secret', function(err, decoded) {
+  jwt.verify(token, process.env.JWT_KEY, function(err, decoded) {
     if (err) {
       return res.send(false);
     }
@@ -29,7 +29,7 @@ router.post('/token', (req, res, next) => {
     var pass = bcrypt.compareSync(req.body.password, result[0].password);
     if (pass) {
       delete result[0].password;
-      var token = jwt.sign(result[0], 'secret');
+      var token = jwt.sign(result[0], process.env.JWT_KEY);
       res.cookie('token', token, {httpOnly: true});
       return res.send(result[0]);
     } else {
