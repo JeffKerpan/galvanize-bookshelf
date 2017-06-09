@@ -10,7 +10,6 @@
     "nf": "nf start",
     "start": "node server.js",
     "test": "mocha",
-    "nodemon": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -32,7 +31,6 @@
     "body-parser": "^1.17.2",
     "boom": "^3.2.2",
     "cookie-parser": "^1.4.3",
-    "dotenv": "^2.0.0",
     "express": "^4.15.3",
     "humps": "^1.1.0",
     "jsonwebtoken": "^7.4.1",
@@ -42,6 +40,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "dotenv": "^2.0.0",
     "eslint": "^3.1.1",
     "eslint-config-ryansobol": "^7.7.0",
     "foreman": "^1.4.1",
